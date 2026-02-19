@@ -25,12 +25,10 @@ public class HomePage {
         this.wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
     }
 
-    // Відкрити категорію товарів
     public void openPromoCategory() {
         webDriver.get("https://flowers.ua/ua/promo");
     }
 
-    // Натиснути на перший товар
     public void clickFirstProduct() {
         WebElement product = wait.until(
                 ExpectedConditions.elementToBeClickable(firstProductLocator)
@@ -38,7 +36,6 @@ public class HomePage {
         product.click();
     }
 
-    // Якщо на сайті є кнопка пошуку — клікаємо
     public void clickSearchButtonIfExists() {
         if (!webDriver.findElements(searchButtonLocator).isEmpty()) {
             try {

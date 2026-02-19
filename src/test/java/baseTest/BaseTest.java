@@ -14,7 +14,6 @@ public class BaseTest {
 
     @Before
     public void setUp() {
-        // автоматично підбирає і завантажує chromedriver під твою версію Chrome
         WebDriverManager.chromedriver().setup();
 
         webDriver = new ChromeDriver();

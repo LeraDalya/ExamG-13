@@ -14,7 +14,6 @@ public class ProductPage {
     private WebDriver webDriver;
     private WebDriverWait wait;
 
-    // Локатори
     private By addToCartButtonLocator = By.xpath("//button[@class='card__btn ']");
     private By cartItemLocator = By.xpath("//div[contains(@class,'cart-item')]");
 
@@ -23,7 +22,6 @@ public class ProductPage {
         this.wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
     }
 
-    // Клік на кнопку додати до кошика
     public void clickAddToCartButton() {
         try {
             WebElement addButton = wait.until(ExpectedConditions.elementToBeClickable(addToCartButtonLocator));
@@ -34,7 +32,6 @@ public class ProductPage {
         }
     }
 
-    // Перевірка, що товар доданий у кошик
     public void verifyProductAddedToCart() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(cartItemLocator));
     }

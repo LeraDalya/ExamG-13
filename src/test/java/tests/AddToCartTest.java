@@ -10,12 +10,12 @@ public class AddToCartTest extends BaseTest {
     @Test
     public void addProductToCartTest() {
         HomePage homePage = pageProvider.getHomePage();
-        homePage.openPromoCategory();       // відкриваємо категорію
-        homePage.clickFirstProduct();       // кликаємо перший товар
+        homePage.openPromoCategory();
+        homePage.clickFirstProduct();
 
         ProductPage productPage = pageProvider.getProductPage();
-        productPage.clickAddToCartButton(); // добавляємо товар
+        productPage.clickAddToCartButton();
 
-        productPage.verifyProductAddedToCart(); // перевіряємо, що додано
+        productPage.verifyProductAddedToCart();
     }
 }
