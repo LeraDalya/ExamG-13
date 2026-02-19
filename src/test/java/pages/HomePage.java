@@ -31,8 +31,7 @@ public class HomePage {
 
     public void clickFirstProduct() {
         WebElement product = wait.until(
-                ExpectedConditions.elementToBeClickable(firstProductLocator)
-        );
+                ExpectedConditions.elementToBeClickable(firstProductLocator));
         product.click();
     }
 
