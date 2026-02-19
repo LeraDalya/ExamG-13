@@ -1,0 +1,69 @@
+TC01 – Search Product
+Precondition:
+1. Browser is opened.
+2. User is on https://flowers.ua/ua/brovary
+
+Steps:
+1. Open Home Page.
+2. Enter “троянди” into search field.
+3. Click Search button.
+
+Expected Result:
+1. Search results page is opened.
+2. List of products related to “троянди” is displayed.
+3. At least one product card is visible.
+
+TC02 – Add Product to Cart
+Precondition:
+1. Browser is opened.
+2. User is on Home Page.
+
+Steps:
+1. Enter “троянди” in search field.
+2. Click Search button.
+3. Open first product from search results.
+4. Click “Купити” (Buy) button.
+
+Expected Result:
+1. Cart popup/page is displayed.
+2. Selected product appears in cart.
+3. Product name and price are visible in cart.
+
+TC03 – Change Product Quantity in Cart
+Precondition:
+1. Product is added to cart.
+2. Cart page is opened.
+
+Steps:
+1. Locate quantity input field.
+2. Change quantity value from 1 to 2.
+
+Expected Result:
+1. Quantity value is updated to 2.
+2. Total price is recalculated according to new quantity.
+
+TC04 – Remove Product from Cart
+Precondition:
+1. Product is added to cart.
+2. Cart page is opened.
+
+Steps:
+1. Click “Remove/Delete” button near product in cart.
+
+Expected Result:
+1. Product is removed from cart.
+2. Cart becomes empty.
+3. Message like “Cart is empty” is displayed (if applicable).
+
+TC05 – Category Navigation
+Precondition:
+1. Browser is opened.
+2. User is on Home Page.
+
+Steps:
+1. Click on category “Букети” (Bouquets) in main menu.
+
+Expected Result:
+1. Category page is opened.
+2. List of bouquet products is displayed.
+3. Page title corresponds to selected category.
