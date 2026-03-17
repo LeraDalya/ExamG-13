@@ -1,36 +1,35 @@
 package pages;
 
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class CartPage extends ParentPage {
+import java.time.Duration;
+
+public class CartPage extends BasePage {
 
     public CartPage(WebDriver webDriver) {
         super(webDriver);
     }
 
-    @FindBy(xpath = "//div[contains(@class,'cart')]")
-    private WebElement cartContainer;
+    private By cartButton = By.xpath("//a[@data-test='header.cart']");
 
-    @FindBy(xpath = "//input[@type='number']")
-    private WebElement quantityInput;
+    // Контейнер модалки корзини
+    private By cartModal = By.xpath("//a[@class='common__btn']");
 
-    @FindBy(xpath = "//button[contains(@class,'remove')]")
-    private WebElement removeButton;
-
-    public void checkCartIsDisplayed() {
-        Assert.assertTrue(cartContainer.isDisplayed());
+    public void openCart() {
+        webDriver.findElement(cartButton).click();
     }
 
-    public void changeQuantity(String quantity) {
-        quantityInput.clear();
-        quantityInput.sendKeys(quantity);
-    }
-
-    public void clickRemoveButton() {
-        removeButton.click();
+    public void verifyCartPageOpened() {
+        try {
+            new WebDriverWait(webDriver, Duration.ofSeconds(10))
+                    .until(ExpectedConditions.visibilityOfElementLocated(cartModal));
+            System.out.println("Cart modal is visible, test passed");
+        } catch (Exception e) {
+            throw new AssertionError("Cart modal is not visible!");
+        }
     }
 }
-

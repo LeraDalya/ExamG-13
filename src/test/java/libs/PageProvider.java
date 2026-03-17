@@ -15,8 +15,8 @@ public class PageProvider {
         return new HomePage(webDriver);
     }
 
-    public SearchResultPage getSearchResultPage() {
-        return new SearchResultPage(webDriver);
+    public BasePage getSearchResultPage() {
+        return new BasePage(webDriver);
     }
 
     public ProductPage getProductPage() {

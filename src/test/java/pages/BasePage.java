@@ -1,15 +1,13 @@
 package pages;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
 
-public class ParentPage {
+public class BasePage {
 
     protected WebDriver webDriver;
 
-    public ParentPage(WebDriver webDriver) {
+    public BasePage(WebDriver webDriver) {
         this.webDriver = webDriver;
-        PageFactory.initElements(webDriver, this);
     }
 
     protected void openUrl(String url) {
